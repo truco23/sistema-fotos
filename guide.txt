@@ -1,0 +1,5 @@
+1 - Para utlilizar o projeto acesse a pasta client 
+2 - Dentro da pasta cliente utilize o comando npm install
+3 - Depois o comando npm start 
+4 - Os mesmos passos devem ser realizados na pasta server
+5 - Feito isso sua aplicação estará disponível em http://localhost:3000
