@@ -34,7 +34,7 @@ var FotoComponent = /** @class */ (function () {
             moduleId: module.id,
             selector: "foto",
             templateUrl: "./foto.component.html",
-            styleUrls: [""]
+            styleUrls: ["./foto.component.css"]
         })
     ], FotoComponent);
     return FotoComponent;

@@ -1,0 +1,24 @@
+.foto-categoria {
+    border-radius: 100%;
+    font-size: .8em;
+    padding: 2.2em 1em;
+    position: absolute;
+    right: 6px;
+    top: 6px;
+    opacity: .9;
+    width: 86px;
+}
+
+.foto-image {
+    height: 360px;
+}
+
+.foto-legenda {
+    padding: 1.5em 1.5em 0;
+}
+
+@media(min-width: 576px) {
+    .foto-image {
+        height: 200px;
+    }   
+}

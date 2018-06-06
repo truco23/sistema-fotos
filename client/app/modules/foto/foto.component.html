@@ -1,13 +1,18 @@
-<figure>
-    <span>
+<figure class="position-relative">
+    <span class="foto-categoria text-white text-center"
+        [class.bg-primary]="categoria == 'animais'"
+        [class.bg-success]="categoria == 'paisagens'"
+        [class.bg-info]="categoria == 'esportes'"
+        [class.bg-dark]="categoria == 'outros'"
+    >
         {{categoria}}
     </span>
-    <img class="card-img-top img-fluid" 
+    <img class="foto-image card-img-top img-fluid" 
         [src]="url" 
         [alt]="titulo"
         [title]="descricao"
     >
-    <figcaption class="card-body">
+    <figcaption class="foto-legenda card-body">
         <h5 class="card-title text-center">
             {{titulo}}
         </h5>

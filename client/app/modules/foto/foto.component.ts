@@ -4,7 +4,7 @@ import { Component, Input } from "@angular/core";
     moduleId: module.id,
     selector: "foto",
     templateUrl: "./foto.component.html",
-    styleUrls: [""]
+    styleUrls: ["./foto.component.css"]
 })
 
 export class FotoComponent {
