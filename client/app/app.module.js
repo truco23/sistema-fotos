@@ -9,6 +9,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var platform_browser_1 = require("@angular/platform-browser");
 var app_component_1 = require("./app.component");
+var listagem_component_1 = require("./pages/listagem/listagem.component");
 var AppModule = /** @class */ (function () {
     function AppModule() {
     }
@@ -18,7 +19,8 @@ var AppModule = /** @class */ (function () {
                 platform_browser_1.BrowserModule
             ],
             declarations: [
-                app_component_1.AppComponent
+                app_component_1.AppComponent,
+                listagem_component_1.ListagemComponent
             ],
             bootstrap: [
                 app_component_1.AppComponent
