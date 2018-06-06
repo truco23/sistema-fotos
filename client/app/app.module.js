@@ -9,6 +9,9 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var platform_browser_1 = require("@angular/platform-browser");
 var app_routes_1 = require("./app.routes");
+var jumbotron_module_1 = require("./modules/jumbotron/jumbotron.module");
+var painel_module_1 = require("./modules/painel/painel.module");
+var foto_module_1 = require("./modules/foto/foto.module");
 var app_component_1 = require("./app.component");
 var listagem_component_1 = require("./pages/listagem/listagem.component");
 var menu_component_1 = require("./components/menu/menu.component");
@@ -19,7 +22,10 @@ var AppModule = /** @class */ (function () {
         core_1.NgModule({
             imports: [
                 platform_browser_1.BrowserModule,
-                app_routes_1.routing
+                app_routes_1.routing,
+                jumbotron_module_1.JumbotronModule,
+                painel_module_1.PainelModule,
+                foto_module_1.FotoModule
             ],
             declarations: [
                 app_component_1.AppComponent,

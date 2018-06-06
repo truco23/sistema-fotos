@@ -1,0 +1,19 @@
+<figure>
+    <img class="card-img-top" 
+        [src]="url" 
+        [alt]="titulo"
+        [title]="descricao"
+    >
+    <figcaption class="card-body">
+        <h5 class="card-title text-center">
+            {{titulo}}
+        </h5>
+        <p class="card-text">
+            {{descricao}}
+        </p>
+        
+        <div class="row">
+            <ng-content></ng-content>
+        </div>
+    </figcaption>
+</figure>
