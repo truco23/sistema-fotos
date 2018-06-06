@@ -11,6 +11,7 @@ var platform_browser_1 = require("@angular/platform-browser");
 var app_routes_1 = require("./app.routes");
 var app_component_1 = require("./app.component");
 var listagem_component_1 = require("./pages/listagem/listagem.component");
+var menu_component_1 = require("./components/menu/menu.component");
 var AppModule = /** @class */ (function () {
     function AppModule() {
     }
@@ -22,7 +23,8 @@ var AppModule = /** @class */ (function () {
             ],
             declarations: [
                 app_component_1.AppComponent,
-                listagem_component_1.ListagemComponent
+                listagem_component_1.ListagemComponent,
+                menu_component_1.MenuComponent
             ],
             bootstrap: [
                 app_component_1.AppComponent
