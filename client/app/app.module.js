@@ -8,6 +8,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var platform_browser_1 = require("@angular/platform-browser");
+var app_routes_1 = require("./app.routes");
 var app_component_1 = require("./app.component");
 var listagem_component_1 = require("./pages/listagem/listagem.component");
 var AppModule = /** @class */ (function () {
@@ -16,7 +17,8 @@ var AppModule = /** @class */ (function () {
     AppModule = __decorate([
         core_1.NgModule({
             imports: [
-                platform_browser_1.BrowserModule
+                platform_browser_1.BrowserModule,
+                app_routes_1.routing
             ],
             declarations: [
                 app_component_1.AppComponent,
