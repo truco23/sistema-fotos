@@ -6,15 +6,22 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
 Object.defineProperty(exports, "__esModule", { value: true });
+require("rxjs/add/operator/map");
+// modules angular
 var core_1 = require("@angular/core");
 var platform_browser_1 = require("@angular/platform-browser");
+var http_1 = require("@angular/http");
+// modules criados
 var app_routes_1 = require("./app.routes");
 var jumbotron_module_1 = require("./modules/jumbotron/jumbotron.module");
 var painel_module_1 = require("./modules/painel/painel.module");
 var foto_module_1 = require("./modules/foto/foto.module");
+// components criados
 var app_component_1 = require("./app.component");
 var listagem_component_1 = require("./pages/listagem/listagem.component");
 var menu_component_1 = require("./components/menu/menu.component");
+// services criados
+var foto_service_1 = require("./services/foto.service");
 var AppModule = /** @class */ (function () {
     function AppModule() {
     }
@@ -22,6 +29,7 @@ var AppModule = /** @class */ (function () {
         core_1.NgModule({
             imports: [
                 platform_browser_1.BrowserModule,
+                http_1.HttpModule,
                 app_routes_1.routing,
                 jumbotron_module_1.JumbotronModule,
                 painel_module_1.PainelModule,
@@ -35,7 +43,9 @@ var AppModule = /** @class */ (function () {
             bootstrap: [
                 app_component_1.AppComponent
             ],
-            providers: []
+            providers: [
+                foto_service_1.FotoService
+            ]
         })
     ], AppModule);
     return AppModule;
