@@ -24,7 +24,11 @@
                [categoria]="foto.categoria"
             >
 
-                <a href="#" class="btn btn-outline-success btn-block">Alteração</a>
+                <a class="btn btn-outline-success btn-block"
+                    [routerLink]="['/cadastro', foto._id]"
+                >
+                    Alteração
+                </a>
         
                 <botao class="btn-block"
                     nome="Remover"

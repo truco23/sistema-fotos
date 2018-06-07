@@ -22,7 +22,7 @@ var FotoService = /** @class */ (function () {
         return [
             "Paisagens",
             "Animais",
-            "Esporter",
+            "Esportes",
             "Outros"
         ];
     };
@@ -31,9 +31,15 @@ var FotoService = /** @class */ (function () {
             .get(this.url)
             .map(function (res) { return res.json(); });
     };
+    FotoService.prototype.buscaPorId = function (id) {
+        return this._http
+            .get(this.url + "/" + id)
+            .map(function (res) { return res.json(); });
+    };
     FotoService.prototype.cadastro = function (foto) {
         if (foto._id) {
-            console.log("Atualização");
+            return this._http
+                .put(this.url + "/" + foto._id, JSON.stringify(foto), { headers: this.header });
         }
         else {
             return this._http

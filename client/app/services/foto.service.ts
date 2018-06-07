@@ -21,7 +21,7 @@ export class FotoService {
         return [
             "Paisagens",
             "Animais",
-            "Esporter",
+            "Esportes",
             "Outros"
         ]
     }
@@ -33,11 +33,19 @@ export class FotoService {
             .map(res => res.json())
     }
 
+    buscaPorId(id) {
+
+        return this._http
+            .get(this.url + "/" + id)
+            .map(res => res.json())
+    }
+
     cadastro(foto: FotoComponent) {
 
         if(foto._id) {
 
-            console.log("Atualização");
+            return this._http
+                .put(this.url + "/" + foto._id, JSON.stringify(foto), { headers: this.header })
         } else {
 
             return this._http

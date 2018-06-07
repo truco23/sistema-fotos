@@ -11,17 +11,35 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var forms_1 = require("@angular/forms");
+var router_1 = require("@angular/router");
 var foto_service_1 = require("../../services/foto.service");
 var foto_component_1 = require("../../modules/foto/foto.component");
 var mensagem_service_1 = require("../../services/mensagem.service");
 var CadastroComponent = /** @class */ (function () {
-    function CadastroComponent(_fotoService, _mensagemService, _fb) {
+    function CadastroComponent(_fotoService, _mensagemService, _fb, _parametro, _rotas) {
+        var _this = this;
         this._fotoService = _fotoService;
         this._mensagemService = _mensagemService;
         this._fb = _fb;
+        this._parametro = _parametro;
+        this._rotas = _rotas;
         this.foto = new foto_component_1.FotoComponent();
         this.classe = "d-none";
         this.categorias = this._fotoService.categorias();
+        this._parametro
+            .params
+            .subscribe(function (parametro) {
+            var id = parametro["id"];
+            if (id) {
+                _this._fotoService
+                    .buscaPorId(id)
+                    .subscribe(function (res) {
+                    _this.foto = res;
+                }, function (erro) {
+                    console.log(erro);
+                });
+            }
+        });
         this.form = this._fb.group({
             categoria: ["", forms_1.Validators.required],
             titulo: ["", forms_1.Validators.compose([forms_1.Validators.required, forms_1.Validators.minLength(3)])],
@@ -37,6 +55,12 @@ var CadastroComponent = /** @class */ (function () {
             _this.foto = new foto_component_1.FotoComponent();
             _this.mensagem = _this._mensagemService.cadastroSucesso();
             _this.classe = _this._mensagemService.classeSuccess();
+            setTimeout(function () {
+                if (confirm("Deseja cadastrar uma nova foto?")) { }
+                else {
+                    _this._rotas.navigate(['']);
+                }
+            }, 200);
         }, function (erro) {
             console.log(erro);
             _this.mensagem = _this._mensagemService.cadastroErro();
@@ -54,7 +78,9 @@ var CadastroComponent = /** @class */ (function () {
         }),
         __metadata("design:paramtypes", [foto_service_1.FotoService,
             mensagem_service_1.MensagemService,
-            forms_1.FormBuilder])
+            forms_1.FormBuilder,
+            router_1.ActivatedRoute,
+            router_1.Router])
     ], CadastroComponent);
     return CadastroComponent;
 }());
