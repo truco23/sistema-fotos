@@ -12,6 +12,7 @@ export class BotaoComponent {
     @Input() estilo: string;
     @Input() tipo: string = "button";
     @Input() cadastro: boolean = false;
+    @Input() remocao: boolean = false;
     @Input() desabilitado: boolean = false;
 
     @Output() acao = new EventEmitter();
@@ -24,14 +25,17 @@ export class BotaoComponent {
 
             if(confirm("Deseja confirmar?")){
 
-                console.log("sim");
                 this.acao.emit();
                 return;
-            } else {
-                console.log("não")
             }
-            
-            return;
+        }
+
+        if(this.remocao) {
+
+            if(confirm("Deseja remover essa foto?")) {
+
+                this.acao.emit();
+            }
         }
     }
 }

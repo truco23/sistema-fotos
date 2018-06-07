@@ -40,6 +40,10 @@ var FotoService = /** @class */ (function () {
                 .post(this.url, JSON.stringify(foto), { headers: this.header });
         }
     };
+    FotoService.prototype.remocao = function (foto) {
+        return this._http
+            .delete(this.url + "/" + foto._id);
+    };
     FotoService = __decorate([
         core_1.Injectable(),
         __metadata("design:paramtypes", [http_1.Http])

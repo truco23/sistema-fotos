@@ -44,4 +44,10 @@ export class FotoService {
             .post(this.url, JSON.stringify(foto), { headers: this.header })
         }
     }
+
+    remocao(foto: FotoComponent) {
+
+        return this._http
+        .delete(this.url + "/" + foto._id)
+    }
 }

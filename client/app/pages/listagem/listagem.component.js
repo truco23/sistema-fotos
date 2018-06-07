@@ -11,21 +11,42 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var foto_service_1 = require("../../services/foto.service");
-var core_2 = require("@angular/core");
+var mensagem_service_1 = require("../../services/mensagem.service");
 var ListagemComponent = /** @class */ (function () {
-    function ListagemComponent(_fotoService) {
+    function ListagemComponent(_fotoService, _mensagemService) {
         var _this = this;
         this._fotoService = _fotoService;
+        this._mensagemService = _mensagemService;
         this.grid = "col-xs-12 col-sm-6 col-md-4";
+        this.classe = "d-none";
         this._fotoService
             .listagem()
             .subscribe(function (res) {
             _this.fotos = res;
-            console.log("Fotos carregadas com sucesso");
         });
     }
+    ListagemComponent.prototype.removerFoto = function (foto) {
+        var _this = this;
+        this._fotoService
+            .remocao(foto)
+            .subscribe(function (res) {
+            var novasFotos = _this.fotos.slice(0);
+            var indiceFoto = novasFotos.indexOf(foto);
+            novasFotos.splice(indiceFoto, 1);
+            _this.fotos = novasFotos;
+            _this.mensagem = _this._mensagemService.remocaoSucesso();
+            _this.classe = _this._mensagemService.classeSuccess();
+        }, function (erro) {
+            console.log(erro);
+            _this.mensagem = _this._mensagemService.remocaoErro();
+            _this.classe = _this._mensagemService.classeDanger();
+        });
+    };
+    ListagemComponent.prototype.close = function (evento) {
+        this.classe = evento;
+    };
     __decorate([
-        core_2.Input(),
+        core_1.Input(),
         __metadata("design:type", String)
     ], ListagemComponent.prototype, "grid", void 0);
     ListagemComponent = __decorate([
@@ -34,7 +55,8 @@ var ListagemComponent = /** @class */ (function () {
             selector: "listagem",
             templateUrl: "./listagem.component.html"
         }),
-        __metadata("design:paramtypes", [foto_service_1.FotoService])
+        __metadata("design:paramtypes", [foto_service_1.FotoService,
+            mensagem_service_1.MensagemService])
     ], ListagemComponent);
     return ListagemComponent;
 }());

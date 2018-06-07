@@ -14,6 +14,7 @@ var BotaoComponent = /** @class */ (function () {
     function BotaoComponent() {
         this.tipo = "button";
         this.cadastro = false;
+        this.remocao = false;
         this.desabilitado = false;
         this.acao = new core_1.EventEmitter();
     }
@@ -21,14 +22,14 @@ var BotaoComponent = /** @class */ (function () {
         event.preventDefault();
         if (this.cadastro) {
             if (confirm("Deseja confirmar?")) {
-                console.log("sim");
                 this.acao.emit();
                 return;
             }
-            else {
-                console.log("não");
+        }
+        if (this.remocao) {
+            if (confirm("Deseja remover essa foto?")) {
+                this.acao.emit();
             }
-            return;
         }
     };
     __decorate([
@@ -47,6 +48,10 @@ var BotaoComponent = /** @class */ (function () {
         core_1.Input(),
         __metadata("design:type", Boolean)
     ], BotaoComponent.prototype, "cadastro", void 0);
+    __decorate([
+        core_1.Input(),
+        __metadata("design:type", Boolean)
+    ], BotaoComponent.prototype, "remocao", void 0);
     __decorate([
         core_1.Input(),
         __metadata("design:type", Boolean)

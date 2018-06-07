@@ -2,6 +2,15 @@
 
 <div class="container">
 
+    <section>
+        <mensagem class="row"
+            [classe]="classe"
+            [mensagem]="mensagem"
+            (fecharMensagem)="close($event)"
+        >
+        </mensagem>
+    </section>
+
     <section class="row">
         <painel 
             [class]="grid"
@@ -14,10 +23,17 @@
                [descricao]="foto.descricao"
                [categoria]="foto.categoria"
             >
-   
-            <a href="#" class="btn btn-outline-primary btn-block">Alterar</a>
-            <a href="#" class="btn btn-outline-danger btn-block">Remover</a>
-        </foto>
+
+                <a href="#" class="btn btn-outline-success btn-block">Alteração</a>
+        
+                <botao class="btn-block"
+                    nome="Remover"
+                    estilo="btn btn-outline-danger btn-block"
+                    remocao="true"
+                    (acao)="removerFoto(foto)"
+                >
+                </botao>
+            </foto>
         </painel>
     </section>
 </div>
