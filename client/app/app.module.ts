@@ -4,12 +4,14 @@ import "rxjs/add/operator/map";
 import { NgModule } from "@angular/core";
 import { BrowserModule } from "@angular/platform-browser";
 import { HttpModule } from "@angular/http";
+import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 
 // modules criados
 import { routing } from "./app.routes";
 import { JumbotronModule } from "./modules/jumbotron/jumbotron.module";
 import { PainelModule } from "./modules/painel/painel.module";
 import { FotoModule } from "./modules/foto/foto.module";
+import { BotaoModule } from "./modules/botao/botao.module";
 
 // components criados
 import { AppComponent } from "./app.component";
@@ -28,7 +30,10 @@ import { FotoService } from "./services/foto.service";
         routing,
         JumbotronModule,
         PainelModule,
-        FotoModule
+        FotoModule,
+        BotaoModule,
+        FormsModule,
+        ReactiveFormsModule
     ],
     declarations: [
         AppComponent,

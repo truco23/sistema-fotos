@@ -11,11 +11,13 @@ require("rxjs/add/operator/map");
 var core_1 = require("@angular/core");
 var platform_browser_1 = require("@angular/platform-browser");
 var http_1 = require("@angular/http");
+var forms_1 = require("@angular/forms");
 // modules criados
 var app_routes_1 = require("./app.routes");
 var jumbotron_module_1 = require("./modules/jumbotron/jumbotron.module");
 var painel_module_1 = require("./modules/painel/painel.module");
 var foto_module_1 = require("./modules/foto/foto.module");
+var botao_module_1 = require("./modules/botao/botao.module");
 // components criados
 var app_component_1 = require("./app.component");
 var listagem_component_1 = require("./pages/listagem/listagem.component");
@@ -34,7 +36,10 @@ var AppModule = /** @class */ (function () {
                 app_routes_1.routing,
                 jumbotron_module_1.JumbotronModule,
                 painel_module_1.PainelModule,
-                foto_module_1.FotoModule
+                foto_module_1.FotoModule,
+                botao_module_1.BotaoModule,
+                forms_1.FormsModule,
+                forms_1.ReactiveFormsModule
             ],
             declarations: [
                 app_component_1.AppComponent,

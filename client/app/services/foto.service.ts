@@ -16,6 +16,16 @@ export class FotoService {
         this.header.append("Content-Type", "application/json");
     }
 
+    categorias(): string[] {
+
+        return [
+            "Paisagens",
+            "Animais",
+            "Esporter",
+            "Outros"
+        ]
+    }
+
     listagem(): Observable<FotoComponent[]> {
 
         return this._http

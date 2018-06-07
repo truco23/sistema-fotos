@@ -1,1 +1,109 @@
 <jumbotron titulo="Painel de fotos"></jumbotron>
+
+<div class="container">
+    <section class="row">
+        <form class="col-xs-12 col-md-6"
+            [formGroup]="form"
+        >
+            <fieldset>
+                <div class="form-group">
+                    <label for="categoria">Selecione uma categoria para a sua foto:</label>
+                    <select name="categoria" class="form-control"
+                        formControlName="categoria"
+                        [(ngModel)]="foto.categoria"
+                    >
+                        <option value="" selected>Selecione uma categoria</option>
+                        <option [value]="categoria | lowercase"
+                            *ngFor="let categoria of categorias"
+                        >
+                            {{categoria}}
+                        </option>
+                    </select>
+
+                    <span class="form-control alert-danger"
+                        *ngIf="form.controls.categoria.invalid"
+                    >
+                        Categoria obrigatória
+                    </span>
+                </div>
+
+                <div class="form-group">
+                    <label for="titulo">Digite um título para a sua foto:</label>
+                    <input type="text" name="titulo" id="titulo" class="form-control" placeholder="Título"
+                        formControlName="titulo"
+                        [(ngModel)]="foto.titulo"
+                    >
+
+                    <div class="form-control alert-danger"
+                        *ngIf="form.controls.titulo.invalid"
+                    >
+                        <span *ngIf="form.controls.titulo.errors.required"
+                        >
+                            Nome obrigatória
+                        </span>
+
+                        <span *ngIf="form.controls.titulo.errors.minlength">
+                            O nome deve conter pelo menos 3 caracteres
+                        </span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="url">Digite a url da sua foto:</label>
+                    <input type="text" name="url" id="url" class="form-control" placeholder="Url"
+                        formControlName="url"
+                        [(ngModel)]="foto.url"
+                    >
+
+                    <span class="form-control alert-danger"
+                        *ngIf="form.controls.url.invalid"
+                    >
+                        Url obrigatória
+                    </span>
+                </div>
+
+                <div class="form-group">
+                    <label for="descricao">Digite uma descrição para a sua foto</label>
+                    <textarea name="descricao" id="descricao" class="form-control" placeholder="Descrição"
+                        formControlName="descricao"
+                        [(ngModel)]="foto.descricao"
+                    ></textarea>
+
+                    <div class="form-control alert-danger"
+                        *ngIf="form.controls.descricao.invalid"
+                    >
+                        <span *ngIf="form.controls.descricao.errors.required">
+                            Descricao obrigatória
+                        </span>
+
+                        <span *ngIf="form.controls.descricao.errors.maxlength">
+                            A descrição não pode conter mais que 50 caracteres
+                        </span>
+                    </div>
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <botao
+                    nome="Salvar"
+                    tipo="submit"
+                    estilo="btn btn-outline-success"
+                    cadastro="true"
+                    [desabilitado]="form.invalid"
+                    (acao)="cadastroFoto()"
+                >
+                </botao>
+                <a class="btn btn-outline-primary"
+                    [routerLink]="['']"
+                >
+                    Voltar
+                </a>
+            </fieldset>
+        </form>
+
+        <foto class="col-xs-12 col-md-6"
+
+        >
+        </foto>
+    </section>
+</div>

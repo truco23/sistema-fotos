@@ -18,6 +18,14 @@ var FotoService = /** @class */ (function () {
         this.header = new http_1.Headers;
         this.header.append("Content-Type", "application/json");
     }
+    FotoService.prototype.categorias = function () {
+        return [
+            "Paisagens",
+            "Animais",
+            "Esporter",
+            "Outros"
+        ];
+    };
     FotoService.prototype.listagem = function () {
         return this._http
             .get(this.url)
