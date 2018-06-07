@@ -1,4 +1,4 @@
-<jumbotron titulo="Painel de fotos"></jumbotron>
+<jumbotron titulo="Card de fotos"></jumbotron>
 
 <div class="container">
 
@@ -12,9 +12,28 @@
     </section>
 
     <section class="row">
+        <form class="col-xs-12 col-md-8 form-group">
+            <input type="text" class="form-control" placeholder="Filtrar"
+                #valorDigitado
+                (keyup)="0"
+            >
+        </form>
+
+        <div class="col-xs-12 col-md-4">
+            <select name="categoria" class="form-control form-group"
+                (change)="0"
+                #selecionado
+            >
+                <option value="">Selecione uma categoria</option>
+                <option [value]="categoria | lowercase" *ngFor="let categoria of categorias">{{categoria}}</option>
+            </select>
+        </div>
+    </section>
+
+    <section class="row">
         <painel 
             [class]="grid"
-            *ngFor="let foto of fotos"
+            *ngFor="let foto of fotos | filtroInput: valorDigitado.value | filtroSelect: selecionado.value"
             [titulo]="foto.titulo"
         >
             <foto

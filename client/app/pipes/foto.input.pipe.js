@@ -7,19 +7,20 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
-var foto_component_1 = require("./foto.component");
-var foto_input_pipe_1 = require("../../pipes/foto.input.pipe");
-var foto_select_pipe_1 = require("../../pipes/foto.select.pipe");
-var FotoModule = /** @class */ (function () {
-    function FotoModule() {
+var FiltroInput = /** @class */ (function () {
+    function FiltroInput() {
     }
-    FotoModule = __decorate([
-        core_1.NgModule({
-            declarations: [foto_component_1.FotoComponent, foto_input_pipe_1.FiltroInput, foto_select_pipe_1.FiltroSelect],
-            exports: [foto_component_1.FotoComponent, foto_input_pipe_1.FiltroInput, foto_select_pipe_1.FiltroSelect]
+    FiltroInput.prototype.transform = function (fotos, digitado) {
+        if (fotos === void 0) { fotos = []; }
+        digitado = digitado.toLowerCase();
+        return fotos.filter(function (foto) { return foto.titulo.toLowerCase().includes(digitado); });
+    };
+    FiltroInput = __decorate([
+        core_1.Pipe({
+            name: "filtroInput"
         })
-    ], FotoModule);
-    return FotoModule;
+    ], FiltroInput);
+    return FiltroInput;
 }());
-exports.FotoModule = FotoModule;
-//# sourceMappingURL=foto.module.js.map
+exports.FiltroInput = FiltroInput;
+//# sourceMappingURL=foto.input.pipe.js.map

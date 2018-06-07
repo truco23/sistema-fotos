@@ -7,19 +7,20 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
-var foto_component_1 = require("./foto.component");
-var foto_input_pipe_1 = require("../../pipes/foto.input.pipe");
-var foto_select_pipe_1 = require("../../pipes/foto.select.pipe");
-var FotoModule = /** @class */ (function () {
-    function FotoModule() {
+var FiltroSelect = /** @class */ (function () {
+    function FiltroSelect() {
     }
-    FotoModule = __decorate([
-        core_1.NgModule({
-            declarations: [foto_component_1.FotoComponent, foto_input_pipe_1.FiltroInput, foto_select_pipe_1.FiltroSelect],
-            exports: [foto_component_1.FotoComponent, foto_input_pipe_1.FiltroInput, foto_select_pipe_1.FiltroSelect]
+    FiltroSelect.prototype.transform = function (fotos, selecionado) {
+        if (fotos === void 0) { fotos = []; }
+        selecionado = selecionado.toLowerCase();
+        return fotos.filter(function (foto) { return foto.categoria.toLowerCase().includes(selecionado); });
+    };
+    FiltroSelect = __decorate([
+        core_1.Pipe({
+            name: "filtroSelect"
         })
-    ], FotoModule);
-    return FotoModule;
+    ], FiltroSelect);
+    return FiltroSelect;
 }());
-exports.FotoModule = FotoModule;
-//# sourceMappingURL=foto.module.js.map
+exports.FiltroSelect = FiltroSelect;
+//# sourceMappingURL=foto.select.pipe.js.map

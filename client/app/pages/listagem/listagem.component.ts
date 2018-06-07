@@ -18,11 +18,14 @@ export class ListagemComponent {
     fotos: FotoComponent[];
     mensagem: string;
     classe: string = "d-none";
+    categorias: string[];
 
     constructor(
         private _fotoService: FotoService,
         private _mensagemService: MensagemService
     ) {
+
+        this.categorias = this._fotoService.categorias();
 
         this._fotoService
         .listagem()

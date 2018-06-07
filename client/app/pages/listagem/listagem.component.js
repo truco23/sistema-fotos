@@ -19,6 +19,7 @@ var ListagemComponent = /** @class */ (function () {
         this._mensagemService = _mensagemService;
         this.grid = "col-xs-12 col-sm-6 col-md-4";
         this.classe = "d-none";
+        this.categorias = this._fotoService.categorias();
         this._fotoService
             .listagem()
             .subscribe(function (res) {
