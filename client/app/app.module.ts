@@ -15,6 +15,7 @@ import { FotoModule } from "./modules/foto/foto.module";
 import { AppComponent } from "./app.component";
 import { ListagemComponent } from "./pages/listagem/listagem.component";
 import { MenuComponent } from "./components/menu/menu.component";
+import { CadastroComponent } from "./pages/cadastro/cadastro.component";
 
 // services criados
 import { FotoService } from "./services/foto.service";
@@ -32,7 +33,8 @@ import { FotoService } from "./services/foto.service";
     declarations: [
         AppComponent,
         ListagemComponent,
-        MenuComponent
+        MenuComponent,
+        CadastroComponent
     ],
     bootstrap: [
         AppComponent

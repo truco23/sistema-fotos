@@ -7,18 +7,17 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
-var MenuComponent = /** @class */ (function () {
-    function MenuComponent() {
-        this.link = "home";
+var CadastroComponent = /** @class */ (function () {
+    function CadastroComponent() {
     }
-    MenuComponent = __decorate([
+    CadastroComponent = __decorate([
         core_1.Component({
             moduleId: module.id,
-            selector: "menu",
-            templateUrl: "./menu.component.html"
+            selector: "cadastro",
+            templateUrl: "./cadastro.component.html"
         })
-    ], MenuComponent);
-    return MenuComponent;
+    ], CadastroComponent);
+    return CadastroComponent;
 }());
-exports.MenuComponent = MenuComponent;
-//# sourceMappingURL=menu.component.js.map
+exports.CadastroComponent = CadastroComponent;
+//# sourceMappingURL=cadastro.component.js.map

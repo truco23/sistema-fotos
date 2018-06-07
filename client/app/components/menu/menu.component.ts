@@ -6,4 +6,7 @@ import { Component } from "@angular/core";
     templateUrl: "./menu.component.html"
 })
 
-export class MenuComponent {}
+export class MenuComponent {
+
+    link: string = "home";
+}

@@ -20,6 +20,7 @@ var foto_module_1 = require("./modules/foto/foto.module");
 var app_component_1 = require("./app.component");
 var listagem_component_1 = require("./pages/listagem/listagem.component");
 var menu_component_1 = require("./components/menu/menu.component");
+var cadastro_component_1 = require("./pages/cadastro/cadastro.component");
 // services criados
 var foto_service_1 = require("./services/foto.service");
 var AppModule = /** @class */ (function () {
@@ -38,7 +39,8 @@ var AppModule = /** @class */ (function () {
             declarations: [
                 app_component_1.AppComponent,
                 listagem_component_1.ListagemComponent,
-                menu_component_1.MenuComponent
+                menu_component_1.MenuComponent,
+                cadastro_component_1.CadastroComponent
             ],
             bootstrap: [
                 app_component_1.AppComponent
