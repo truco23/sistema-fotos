@@ -32,4 +32,16 @@ export class FotoService {
             .get(this.url)
             .map(res => res.json())
     }
+
+    cadastro(foto: FotoComponent) {
+
+        if(foto._id) {
+
+            console.log("Atualização");
+        } else {
+
+            return this._http
+            .post(this.url, JSON.stringify(foto), { headers: this.header })
+        }
+    }
 }

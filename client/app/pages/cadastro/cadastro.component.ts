@@ -34,6 +34,12 @@ export class CadastroComponent {
 
     cadastroFoto() {
 
-        console.log(this.foto);
+        this._fotoService
+        .cadastro(this.foto)
+        .subscribe(res => {
+
+            this.foto = new FotoComponent();
+            console.log("Foto cadastrada")
+        })
     }
 }

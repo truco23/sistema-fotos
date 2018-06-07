@@ -27,7 +27,13 @@ var CadastroComponent = /** @class */ (function () {
         });
     }
     CadastroComponent.prototype.cadastroFoto = function () {
-        console.log(this.foto);
+        var _this = this;
+        this._fotoService
+            .cadastro(this.foto)
+            .subscribe(function (res) {
+            _this.foto = new foto_component_1.FotoComponent();
+            console.log("Foto cadastrada");
+        });
     };
     CadastroComponent = __decorate([
         core_1.Component({

@@ -31,6 +31,15 @@ var FotoService = /** @class */ (function () {
             .get(this.url)
             .map(function (res) { return res.json(); });
     };
+    FotoService.prototype.cadastro = function (foto) {
+        if (foto._id) {
+            console.log("Atualização");
+        }
+        else {
+            return this._http
+                .post(this.url, JSON.stringify(foto), { headers: this.header });
+        }
+    };
     FotoService = __decorate([
         core_1.Injectable(),
         __metadata("design:paramtypes", [http_1.Http])
