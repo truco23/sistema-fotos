@@ -18,6 +18,7 @@ var jumbotron_module_1 = require("./modules/jumbotron/jumbotron.module");
 var painel_module_1 = require("./modules/painel/painel.module");
 var foto_module_1 = require("./modules/foto/foto.module");
 var botao_module_1 = require("./modules/botao/botao.module");
+var mensagem_module_1 = require("./modules/mensagem/mensagem.module");
 // components criados
 var app_component_1 = require("./app.component");
 var listagem_component_1 = require("./pages/listagem/listagem.component");
@@ -25,6 +26,7 @@ var menu_component_1 = require("./components/menu/menu.component");
 var cadastro_component_1 = require("./pages/cadastro/cadastro.component");
 // services criados
 var foto_service_1 = require("./services/foto.service");
+var mensagem_service_1 = require("./services/mensagem.service");
 var AppModule = /** @class */ (function () {
     function AppModule() {
     }
@@ -39,7 +41,8 @@ var AppModule = /** @class */ (function () {
                 foto_module_1.FotoModule,
                 botao_module_1.BotaoModule,
                 forms_1.FormsModule,
-                forms_1.ReactiveFormsModule
+                forms_1.ReactiveFormsModule,
+                mensagem_module_1.MensagemModule
             ],
             declarations: [
                 app_component_1.AppComponent,
@@ -51,7 +54,8 @@ var AppModule = /** @class */ (function () {
                 app_component_1.AppComponent
             ],
             providers: [
-                foto_service_1.FotoService
+                foto_service_1.FotoService,
+                mensagem_service_1.MensagemService
             ]
         })
     ], AppModule);

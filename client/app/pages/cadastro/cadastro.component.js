@@ -13,11 +13,14 @@ var core_1 = require("@angular/core");
 var forms_1 = require("@angular/forms");
 var foto_service_1 = require("../../services/foto.service");
 var foto_component_1 = require("../../modules/foto/foto.component");
+var mensagem_service_1 = require("../../services/mensagem.service");
 var CadastroComponent = /** @class */ (function () {
-    function CadastroComponent(_fotoService, _fb) {
+    function CadastroComponent(_fotoService, _mensagemService, _fb) {
         this._fotoService = _fotoService;
+        this._mensagemService = _mensagemService;
         this._fb = _fb;
         this.foto = new foto_component_1.FotoComponent();
+        this.classe = "d-none";
         this.categorias = this._fotoService.categorias();
         this.form = this._fb.group({
             categoria: ["", forms_1.Validators.required],
@@ -32,8 +35,16 @@ var CadastroComponent = /** @class */ (function () {
             .cadastro(this.foto)
             .subscribe(function (res) {
             _this.foto = new foto_component_1.FotoComponent();
-            console.log("Foto cadastrada");
+            _this.mensagem = _this._mensagemService.cadastroSucesso();
+            _this.classe = _this._mensagemService.classeSuccess();
+        }, function (erro) {
+            console.log(erro);
+            _this.mensagem = _this._mensagemService.cadastroErro();
+            _this.classe = _this._mensagemService.classeDanger();
         });
+    };
+    CadastroComponent.prototype.close = function (evento) {
+        this.classe = evento;
     };
     CadastroComponent = __decorate([
         core_1.Component({
@@ -42,6 +53,7 @@ var CadastroComponent = /** @class */ (function () {
             templateUrl: "./cadastro.component.html"
         }),
         __metadata("design:paramtypes", [foto_service_1.FotoService,
+            mensagem_service_1.MensagemService,
             forms_1.FormBuilder])
     ], CadastroComponent);
     return CadastroComponent;

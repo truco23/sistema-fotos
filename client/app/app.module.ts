@@ -12,6 +12,7 @@ import { JumbotronModule } from "./modules/jumbotron/jumbotron.module";
 import { PainelModule } from "./modules/painel/painel.module";
 import { FotoModule } from "./modules/foto/foto.module";
 import { BotaoModule } from "./modules/botao/botao.module";
+import { MensagemModule } from "./modules/mensagem/mensagem.module";
 
 // components criados
 import { AppComponent } from "./app.component";
@@ -21,6 +22,7 @@ import { CadastroComponent } from "./pages/cadastro/cadastro.component";
 
 // services criados
 import { FotoService } from "./services/foto.service";
+import { MensagemService } from "./services/mensagem.service";
 
 @NgModule({
 
@@ -33,7 +35,8 @@ import { FotoService } from "./services/foto.service";
         FotoModule,
         BotaoModule,
         FormsModule,
-        ReactiveFormsModule
+        ReactiveFormsModule,
+        MensagemModule
     ],
     declarations: [
         AppComponent,
@@ -45,7 +48,8 @@ import { FotoService } from "./services/foto.service";
         AppComponent
     ],
     providers: [
-        FotoService
+        FotoService,
+        MensagemService
     ]
 })
 
