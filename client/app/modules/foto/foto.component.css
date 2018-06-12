@@ -1,12 +1,12 @@
 .foto-categoria {
     border-radius: 100%;
     font-size: .8em;
-    padding: 2.2em 1em;
+    padding: 2em 0;
     position: absolute;
     right: 6px;
+    text-transform: capitalize;
     top: 6px;
-    opacity: .9;
-    width: 86px;
+    width: 74px;
 }
 
 .foto-image {
@@ -19,6 +19,6 @@
 
 @media(min-width: 576px) {
     .foto-image {
-        height: 200px;
+        height: 250px;
     }   
 }

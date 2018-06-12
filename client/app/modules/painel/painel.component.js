@@ -17,6 +17,10 @@ var PainelComponent = /** @class */ (function () {
         core_1.Input(),
         __metadata("design:type", String)
     ], PainelComponent.prototype, "titulo", void 0);
+    __decorate([
+        core_1.Input(),
+        __metadata("design:type", String)
+    ], PainelComponent.prototype, "categoria", void 0);
     PainelComponent = __decorate([
         core_1.Component({
             moduleId: module.id,

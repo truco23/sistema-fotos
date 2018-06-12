@@ -1,3 +1,8 @@
-<div class="card form-group text-center">
+<div class="card form-group text-center border"
+    [class.border-primary]="categoria == 'animais'"
+    [class.border-success]="categoria == 'paisagens'"
+    [class.border-info]="categoria == 'esportes'"
+    [class.border-dark]="categoria == 'outros'"
+>
     <ng-content></ng-content>
 </div>
