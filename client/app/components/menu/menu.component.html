@@ -12,8 +12,8 @@
                 <li class="nav-item">
                     <a class="nav-link" 
                         [routerLink]="['']"
-                        [class.active]="link == 'home'"
-                        (click)="link = 'home'"
+                        [class.active]="link == '/'"
+                        (click)="link = '/'"
                     >
                         Home
                     </a>
@@ -22,8 +22,8 @@
                 <li class="nav-item">
                     <a class="nav-link" 
                         [routerLink]="['/cadastro']"
-                        [class.active]="link == 'cadastro'"
-                        (click)="link = 'cadastro'"
+                        [class.active]="link == '/cadastro'"
+                        (click)="link = '/cadastro'"
                     >
                         Cadastro
                     </a>
